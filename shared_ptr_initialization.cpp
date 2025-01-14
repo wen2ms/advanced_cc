@@ -8,17 +8,25 @@ class Dog {
         std::cout << "Default constructor called" << std::endl;
     }
 
-    Dog(int age) {
+    Dog(int age) : age_(age) {
         std::cout << "Constructor called, age: " << age << std::endl;
     }
 
-    Dog(std::string name) {
+    Dog(std::string name) : name_(name) {
         std::cout << "Constructor called, name: " << name << std::endl;
     }
 
     ~Dog() {
         std::cout << "Destructor called" << std::endl;
     }
+
+    std::string& name() {
+        return name_;
+    }
+
+  private:
+    int age_;
+    std::string name_;
 };
 
 int main() {
@@ -56,6 +64,17 @@ int main() {
 
     std::cout << "dog ptr 2, use_count: " << dog_ptr_2.use_count() << std::endl;
     std::cout << "dog ptr 4, use_count: " << dog_ptr_4.use_count() << std::endl;
+    std::cout << std::endl;
+
+    std::shared_ptr<Dog> dog_shared_ptr = std::make_shared<Dog>("Doberman");
+
+    Dog* dog = dog_shared_ptr.get();
+
+    dog->name() = "Golden retriver";
+    std::cout << "Dog name: " << dog->name() << std::endl;
+
+    dog_shared_ptr->name() = "Labrador";
+    std::cout << "Dog name: " << dog_shared_ptr->name() << std::endl;
 
     return 0;
 }
