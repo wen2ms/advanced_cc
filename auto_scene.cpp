@@ -38,8 +38,8 @@ int main() {
     cats_map.insert(std::make_pair(0, Cat()));
     cats_map.insert(std::make_pair(1, Cat()));
 
-    for (auto it = cats_map.begin(); it != cats_map.end(); ++it) {
-        std::cout << it->first << " " << it->second.name_ << std::endl;
+    for (const std::pair<const int, Cat>& cat : cats_map) {
+        std::cout << cat.first << " " << Cat::name_ << std::endl;
     }
 
     return 0;
