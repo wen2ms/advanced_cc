@@ -12,7 +12,7 @@ class User {
         if (user.nick_name_.has_value()) {
             out << user.nick_name_.value() << ' ';
         }
-        if (user.age_) {
+        if (user.age_ == std::nullopt) {
             out << *user.age_ << ' ';
         }
 
