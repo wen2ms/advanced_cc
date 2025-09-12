@@ -1,14 +1,15 @@
 #include <iostream>
 #include <string>
+#include <utility>
 
 class Dog {
   public:
-    Dog() : name_(""), age_(-1) {}
+    Dog() : age_(-1) {}
 
-    Dog(std::string name, int age) : name_(name), age_(age) {}
+    Dog(std::string name, int age) : name_(std::move(name)), age_(age) {}
 
     void display() {
-        std::cout << name_ << ' ' << age_ << std::endl;
+        std::cout << name_ << ' ' << age_ << '\n';
     }
 
   private:
@@ -29,7 +30,7 @@ struct Student {
 int main() {
     create_dog("Six", 6).display();
 
-    Student student{{}, 13};
+    Student student{.dog = {}, .age = 13};
     student.dog.display();
 
     return 0;

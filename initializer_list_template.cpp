@@ -1,23 +1,23 @@
 #include <iostream>
-#include <vector>
 #include <string>
+#include <vector>
 
 void display(std::initializer_list<int> input_list) {
-    for (auto it = input_list.begin(); it != input_list.end(); ++it) {
-        std::cout << *it << ' ';
+    for (int num : input_list) {
+        std::cout << num << ' ';
     }
-    std::cout << std::endl;
+    std::cout << '\n';
 }
 
 class Dogs {
   public:
     Dogs(std::initializer_list<std::string> input_names) {
-        for (auto it = input_names.begin(); it != input_names.end(); ++it) {
-            dog_names_.push_back(*it);
-            std::cout << *it << ' ';
+        for (const auto& input_name : input_names) {
+            dog_names_.push_back(input_name);
+            std::cout << input_name << ' ';
         }
-        std::cout << std::endl;
-    } 
+        std::cout << '\n';
+    }
 
   private:
     std::vector<std::string> dog_names_;
