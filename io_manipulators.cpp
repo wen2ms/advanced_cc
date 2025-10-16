@@ -11,5 +11,9 @@ int main() {
 
     std::cout << std::setw(5) << "name" << std::setfill('-') << std::setw(6) << "age" << '\n';
 
+    double pi = 3.141592653589793;
+    std::cout << std::setprecision(5) << pi << '\n';
+    std::cout << std::fixed << pi << '\n';
+
     return 0;
 }

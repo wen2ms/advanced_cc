@@ -14,12 +14,12 @@ int main() {
     unsigned int res_l_shift = a << 1;
     unsigned int res_r_shift = a >> 1;
 
-    std::cout << "AND: " << res_and << std::endl;
-    std::cout << "OR : " << res_or << std::endl;
-    std::cout << "NOT: " << std::bitset<8>(res_not) << std::endl;
-    std::cout << "XOR: " << res_xor << std::endl;
-    std::cout << "<< : " << std::bitset<8>(res_l_shift) << std::endl;
-    std::cout << ">> : " << res_r_shift << std::endl;
+    std::cout << "AND: " << res_and << '\n';
+    std::cout << "OR : " << res_or << '\n';
+    std::cout << "NOT: " << std::bitset<8>(res_not) << '\n';
+    std::cout << "XOR: " << res_xor << '\n';
+    std::cout << "<< : " << std::bitset<8>(res_l_shift) << '\n';
+    std::cout << ">> : " << res_r_shift << '\n';
 
     return 0;
 }
