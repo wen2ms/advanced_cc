@@ -1,28 +1,28 @@
-#include <iostream>
 #include <functional>
+#include <iostream>
 #include <memory>
 
 class Dog {
   public:
     Dog() {
-        std::cout << "Constructor called" << std::endl;
+        std::cout << "Constructor called" << '\n';
     }
 
     ~Dog() {
-        std::cout << "Destructor called" << std::endl;
+        std::cout << "Destructor called" << '\n';
     }
 };
 
 int main() {
-    using func_ptr = void(*)(Dog*);
+    using func_ptr = void (*)(Dog*);
 
     std::unique_ptr<Dog, func_ptr> dog_ptr_1(new Dog(), [](Dog* dog) {
-        std::cout << "Lambda1 deleter called" << std::endl;
+        std::cout << "Lambda1 deleter called" << '\n';
         delete dog;
     });
 
     std::unique_ptr<Dog, std::function<void(Dog*)>> dog_ptr_2(new Dog(), [=](Dog* dog) {
-        std::cout << "Lambda2 deleter called" << std::endl;
+        std::cout << "Lambda2 deleter called" << '\n';
         delete dog;
     });
 

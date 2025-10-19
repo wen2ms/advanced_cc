@@ -2,7 +2,7 @@
 #include <memory>
 
 std::unique_ptr<int> foo() {
-    return std::unique_ptr<int>();
+    return {};
 }
 
 int main() {
@@ -18,9 +18,9 @@ int main() {
     ptr_3.reset(new int(20));
 
     int* integer = ptr_3.get();
-    std::cout << "Integer: " << *integer << std::endl;
+    std::cout << "Integer: " << *integer << '\n';
 
-    std::cout << "Integer: " << *ptr_3 << std::endl;
+    std::cout << "Integer: " << *ptr_3 << '\n';
 
     return 0;
 }
