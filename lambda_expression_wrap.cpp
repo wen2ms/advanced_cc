@@ -1,19 +1,15 @@
-#include <iostream>
 #include <functional>
+#include <iostream>
 
 void foo() {
-    using func_ptr = void(*)(int);
+    using func_ptr = void (*)(int);
 
-    func_ptr print_x = [](int x) {
-        std::cout << "x: " << x << std::endl;
-    };
+    func_ptr print_x = [](int x) { std::cout << "x: " << x << '\n'; };
 
     print_x(10);
 
-    // As a functor capturing external variables 
-    auto print_y = [=](int y) {
-        std::cout << "y: " << y << std::endl; 
-    };
+    // As a functor capturing external variables
+    auto print_y = [=](int y) { std::cout << "y: " << y << '\n'; };
 
     std::function<void(int)> print_y_wrap = print_y;
     auto print_y_bind = std::bind(print_y, std::placeholders::_1);

@@ -1,6 +1,6 @@
 #include <iostream>
-#include <string>
 #include <map>
+#include <string>
 
 class Dog {
   public:
@@ -26,7 +26,7 @@ std::string Cat::name_ = "Cat";
 template <class T>
 void call_member() {
     auto member = T::calls();
-    std::cout << "Member is " << member << std::endl;
+    std::cout << "Member is " << member << '\n';
 }
 
 int main() {
@@ -39,7 +39,7 @@ int main() {
     cats_map.insert(std::make_pair(1, Cat()));
 
     for (const std::pair<const int, Cat>& cat : cats_map) {
-        std::cout << cat.first << " " << Cat::name_ << std::endl;
+        std::cout << cat.first << " " << Cat::name_ << '\n';
     }
 
     return 0;

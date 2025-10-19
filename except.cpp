@@ -22,7 +22,7 @@ void foo() {
         std::cout << e.msg_ << '\n';
     }
 
-    std::cout << "over..." << std::endl;
+    std::cout << "over..." << '\n';
 }
 
 int main(int argc, char* argv[]) {
@@ -39,9 +39,9 @@ int main(int argc, char* argv[]) {
 
         float result = my_divide(dividend, divisor);
         std::cout << dividend << " / " << divisor << " is " << result << '\n';
-    } catch (std::invalid_argument& e) {
+    } catch (const std::invalid_argument& e) {
         std::cerr << "Exception: please enter numbers!" << '\n';
-    } catch (std::runtime_error& e) {
+    } catch (const std::runtime_error& e) {
         std::cerr << e.what() << '\n';
     }
 
