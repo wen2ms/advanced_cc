@@ -10,11 +10,9 @@ int main() {
 
     auto is_even = [](int num) { return num % 2 == 0; };
 
-    std::cout << "all even? : " << std::all_of(nums.cbegin(), nums.cend(), is_even) << std::endl;
-
-    std::cout << "any even? : " << std::any_of(nums.cbegin(), nums.cend(), is_even) << std::endl;
-
-    std::cout << "none even? : " << std::none_of(nums.cbegin(), nums.cend(), is_even) << std::endl;
+    std::cout << "all even? : " << std::all_of(nums.cbegin(), nums.cend(), is_even) << '\n';
+    std::cout << "any even? : " << std::any_of(nums.cbegin(), nums.cend(), is_even) << '\n';
+    std::cout << "none even? : " << std::none_of(nums.cbegin(), nums.cend(), is_even) << '\n';
 
     return 0;
 }

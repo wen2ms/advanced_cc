@@ -3,15 +3,15 @@
 
 template <class T>
 void print_value(T& t) {
-    std::cout << "lvalue" << std::endl;
+    std::cout << "lvalue" << '\n';
 }
 
 template <class T>
 void print_value(T&& t) {
-    std::cout << "rvalue" << std::endl;
+    std::cout << "rvalue" << '\n';
 }
 
-template <class T> 
+template <class T>
 void test_forward(T&& t) {
     print_value(t);
 
@@ -20,7 +20,7 @@ void test_forward(T&& t) {
     // t will be convert lvalue only if T is lvalue reference
     print_value(std::forward<T>(t));
 
-    std::cout << std::endl;
+    std::cout << '\n';
 }
 
 int main() {

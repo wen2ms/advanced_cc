@@ -6,8 +6,8 @@ class Animal {
     Animal(std::string name, int age) : name_(name), age_(age) {}
 
     void display(std::string type) {
-        std::cout << "This is a " << type << std::endl;
-    }  
+        std::cout << "This is a " << type << '\n';
+    }
 
   protected:
     std::string name_;
@@ -15,12 +15,14 @@ class Animal {
 };
 
 class Dog : public Animal {
-  public:   
+  public:
+    // Inherit all constructors except copy and move.
+    //  = Dog(std::string name, int age) : Animal(name, age) {}
     using Animal::Animal;
     using Animal::display;
 
     void display() {
-        std::cout << "Dog name: " << name_ << ", Dog age: " << age_ << std::endl;
+        std::cout << "Dog name: " << name_ << ", Dog age: " << age_ << '\n';
     }
 };
 
