@@ -7,7 +7,7 @@ class Foo {
     Foo(const Foo& t) = default;
     Foo(Foo&& t) = default;
     Foo& operator=(const Foo& t) = default;
-    Foo& operator=(Foo&& t) = default; 
+    Foo& operator=(Foo&& t) = default;
 };
 
 class Bar {
@@ -18,10 +18,10 @@ class Bar {
     Bar& operator=(const Bar& other) = delete;
 
     void print_bar(int number) {
-        std::cout << (char)number << std::endl;
+        std::cout << static_cast<char>(number) << '\n';
     }
 
-    void print_bar(char c) = delete;
+    void print_bar(char letter) = delete;
 };
 
 Bar::Bar() = default;
@@ -34,7 +34,7 @@ int main() {
     // Bar bar3 = bar1;
 
     bar1.print_bar(65);
-    
+
     // Error
     // bar1.print_bar('a');
 
